@@ -10,7 +10,7 @@
 
 На языке программирования Pascal:
 
-~~~~{#ex1P .Pascal}
+~~~~{#ex11P .Pascal}
 var a, b, sum, sub, mul: integer;
 begin
   read(a, b);
@@ -26,7 +26,7 @@ end.
 
 На языке программирования C:
 
-~~~~{#ex1C .C}
+~~~~{#ex11C .C}
 #include <stdio.h>
 int main() {
 	int a, b;
