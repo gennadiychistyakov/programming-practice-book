@@ -31,7 +31,7 @@ end.
 
 На языке программирования C:
 
-~~~~{#ex31P .C}
+~~~~{#ex31С .C}
 #include <stdio.h>
 int main() {
 	int n, k, x, flag = 0;
@@ -79,7 +79,7 @@ end.
 
 На языке программирования C:
 
-~~~~{#ex32P .C}
+~~~~{#ex32С .C}
 #include <stdio.h>
 int main() {
 	int n, cnt = 0;
