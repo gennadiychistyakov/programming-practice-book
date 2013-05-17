@@ -74,7 +74,7 @@ begin
   read(n);
   for i := 1 to n do
     read(a[i]);
-  sort(a, 1, n, @gr);
+  sort(a, 1, n, gr);
   for i := 1 to n do
     write(a[i], ' ');
 end.
@@ -84,7 +84,52 @@ end.
 
 ~~~~{#ex41С .C}
 #include <stdio.h>
-int main() {
 
+int i, n;
+int a[1000];
+
+void swap(int *a, int *b) {
+  int c = *a;
+  *a = *b;
+  *b = c;
+  return;
+}
+
+int gr(int a, int b) {
+  if(a > b)
+    return 1;
+  else
+    return 0;
+}
+
+int partition(int *a, int l, int r, int (*cmp)(int a, int b)) {
+  int i, p = l;
+  for(i = l; i < r; i++)
+    if(cmp(a[i], a[r]) == 1) {
+      swap(&a[i], &a[p]);
+      p++;
+    }
+  swap(&a[r], &a[p]);
+  return p;
+}
+
+void sort(int *a, int l, int r, int (*cmp)(int a, int b)) {
+  int q;
+  if(l < r) {
+    q = partition(a, l, r, cmp);
+    sort(a, l, q - 1, cmp);
+    sort(a, q + 1, r, cmp);
+  }
+}
+
+int main() {
+  int i, n;
+  scanf("%d", &n);
+  for(i = 0; i < n; i++)
+    scanf("%d", &a[i]);
+  sort(a, 0, n - 1, gr);
+  for(i = 0; i < n; i++)
+    printf("%d ", a[i]);
+  return 0;
 }
 ~~~~~~~~~~~~~~~~~~~~~~~
