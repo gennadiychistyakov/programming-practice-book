@@ -206,89 +206,91 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <p>Операция по модификации переменой цикла может быть определена как в теле цикла, так и всимволе конца. Недопустима модификация переменной цикла в символе начала цикала.</p>
 <h3 id="part2-3">2.3 Примеры блок-схем с ветвлениями</h3>
 <p>Пусть требуется реализовать программу для определения знака заданного числа.</p>
-<p>Блок-схема алгоритма для решения предлагаемой задачи представлена на рисунке 2.X.</p>
+<p>Блок-схема алгоритма для решения предлагаемой задачи представлена на рисунке 2.6.</p>
 <div class="figure">
-<img src="static/pic231.PNG" alt="Рисунок 2.X - Блок-схема алгоритма определения знака числа" /><p class="caption">Рисунок 2.X - Блок-схема алгоритма определения знака числа</p>
+<img src="static/pic26.PNG" alt="Рисунок 2.6 - Блок-схема алгоритма определения знака числа" /><p class="caption">Рисунок 2.6 - Блок-схема алгоритма определения знака числа</p>
 </div>
 <p>Решение задачи на языке Pascal представлено ниже.</p>
 <pre class="sourceCode Pascal" id="ex21P"><code class="sourceCode pascal"><span class="kw">var</span> x: <span class="dt">real</span>;
-  <span class="kw">begin</span>
+<span class="kw">begin</span>
   readln(x);
-      <span class="kw">if</span> (x &lt;<span class="dv">0</span>) <span class="kw">then</span>
-           writeln(<span class="st">&#39;Negative&#39;</span>)
-       <span class="kw">else</span>     
-           writeln(<span class="st">&#39;Positive&#39;</span>);
+  <span class="kw">if</span> (x &lt; <span class="dv">0</span>) <span class="kw">then</span>
+    writeln(<span class="st">&#39;Negative&#39;</span>)
+  <span class="kw">else</span>      
+    writeln(<span class="st">&#39;Positive&#39;</span>);
 <span class="kw">end</span>.</code></pre>
 <p>На языке программирования C:</p>
 <pre class="sourceCode C" id="ex21С"><code class="sourceCode c"><span class="ot">#include &lt;stdio.h&gt;</span>
 <span class="dt">int</span> main() {
     <span class="dt">float</span> x;
     scanf(<span class="st">&quot;%f&quot;</span>, &amp;x);
-        <span class="kw">if</span>(x &lt; <span class="dv">0</span>)   
-           printf(<span class="st">&quot;Negative</span><span class="ch">\n</span><span class="st">&quot;</span>);
-         <span class="kw">else</span> printf(<span class="st">&quot;Positive</span><span class="ch">\n</span><span class="st">&quot;</span>);
-                }</code></pre>
+    <span class="kw">if</span>(x &lt; <span class="dv">0</span>)   
+        printf(<span class="st">&quot;Negative</span><span class="ch">\n</span><span class="st">&quot;</span>);
+    <span class="kw">else</span> 
+        printf(<span class="st">&quot;Positive</span><span class="ch">\n</span><span class="st">&quot;</span>);
+}</code></pre>
 <p>Пусть требуется реализовать программу для определения числа нулевых элементов в заданной матрице.</p>
-<p>Блок-схема алгоритма решения предлагаемой задачи представлена на рисунке 2.X.</p>
+<p>Блок-схема алгоритма решения предлагаемой задачи представлена на рисунке 2.7.</p>
 <div class="figure">
-<img src="static/pic232.PNG" alt="Рисунок 2.X - Блок-схема алгоритма вычисления суммы элементов" /><p class="caption">Рисунок 2.X - Блок-схема алгоритма вычисления суммы элементов</p>
+<img src="static/pic27.PNG" alt="Рисунок 2.7 - Блок-схема алгоритма вычисления суммы элементов" /><p class="caption">Рисунок 2.7 - Блок-схема алгоритма вычисления суммы элементов</p>
 </div>
 <p>Эквивалентная программа на языке Pascal:</p>
-<pre class="sourceCode Pascal" id="ex22P"><code class="sourceCode pascal"> <span class="kw">var</span> n,m, i, j,s: <span class="dt">integer</span>;
-    a: <span class="kw">array</span> [<span class="dv">1</span>..<span class="dv">100</span>,<span class="dv">1</span>..<span class="dv">100</span>] <span class="kw">of</span> <span class="dt">integer</span>;
+<pre class="sourceCode Pascal" id="ex22P"><code class="sourceCode pascal"><span class="kw">var</span> n, m, i, j, s: <span class="dt">integer</span>;
+    a: <span class="kw">array</span> [<span class="dv">1</span>..<span class="dv">100</span>, <span class="dv">1</span>..<span class="dv">100</span>] <span class="kw">of</span> <span class="dt">integer</span>;
 <span class="kw">begin</span>
-  <span class="kw">read</span>(n,m);
-  s:=<span class="dv">0</span>;
-  writeln(<span class="st">&#39;Input matrix  &#39;</span>,n, <span class="st">&#39; to &#39;</span>,m ,<span class="st">&#39; elements&#39;</span>);
+  <span class="kw">read</span>(n, m);
+  s := <span class="dv">0</span>;
+  writeln(<span class="st">&#39;Input matrix  &#39;</span>, n, <span class="st">&#39; to &#39;</span>, m ,<span class="st">&#39; elements&#39;</span>);
   <span class="kw">for</span> i := <span class="dv">1</span> <span class="kw">to</span> n <span class="kw">do</span>
-     <span class="kw">for</span> j:=<span class="dv">1</span> <span class="kw">to</span> m <span class="kw">do</span>
-       <span class="kw">begin</span>
-        <span class="kw">read</span>(a[i,j]);
-        <span class="kw">if</span> a[i,j]=<span class="dv">0</span> <span class="kw">then</span> inc(s);
-       <span class="kw">end</span>;
-  writeln(<span class="st">&#39;Number of 0 elements &#39;</span>,s);
+    <span class="kw">for</span> j := <span class="dv">1</span> <span class="kw">to</span> m <span class="kw">do</span>
+      <span class="kw">begin</span>
+      <span class="kw">read</span>(a[i, j]);
+      <span class="kw">if</span> a[i, j] = <span class="dv">0</span> <span class="kw">then</span> inc(s);
+      <span class="kw">end</span>;
+  writeln(<span class="st">&#39;Number of 0 elements &#39;</span>, s);
   readln;
 <span class="kw">end</span>.</code></pre>
 <p>На языке программирования C:</p>
 <pre class="sourceCode C" id="ex22С"><code class="sourceCode c"><span class="ot">#include &lt;stdio.h&gt;</span>
 <span class="dt">int</span> main() {
-    <span class="dt">int</span> n,m, s=<span class="dv">0</span>;
+    <span class="dt">int</span> n, m, s = <span class="dv">0</span>;
     <span class="dt">int</span> a[<span class="dv">100</span>][<span class="dv">100</span>];
-    scanf(<span class="st">&quot;%d %d&quot;</span>,&amp;n,&amp;m);
-    printf(<span class="st">&quot;Input matrix %d  to  %d elements&quot;</span>,n,m);
+    scanf(<span class="st">&quot;%d %d&quot;</span>, &amp;n, &amp;m);
+    printf(<span class="st">&quot;Input matrix %d  to  %d elements&quot;</span>, n, m);
     <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; n; i++)
-      <span class="kw">for</span>(<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; m; j++){
-           scanf(<span class="st">&quot;%d&quot;</span>, &amp;a[i][j]);
-           <span class="kw">if</span>(a[i][j]== <span class="dv">0</span>) 
-        s++;
-       }
-    printf(<span class="st">&quot;Number of 0 elements %d&quot;</span>,s);
+        <span class="kw">for</span>(<span class="dt">int</span> j = <span class="dv">0</span>; j &lt; m; j++) {
+            scanf(<span class="st">&quot;%d&quot;</span>, &amp;a[i][j]);
+            <span class="kw">if</span>(a[i][j] == <span class="dv">0</span>) 
+                s++;
+        }
+    printf(<span class="st">&quot;Number of 0 elements %d&quot;</span>, s);
 }</code></pre>
 <p>Пусть требуется реализовать программу для вычисления суммы элементов заданного набора чисел. Мощность набора неизвестна заранее, элементы вводятся в программу поочередно, последовательность заканчивается числом &quot;0&quot;.</p>
-<p>Блок-схема алгоритма решения предлагаемой задачи представлена на рисунке 2.X.</p>
+<p>Блок-схема алгоритма решения предлагаемой задачи представлена на рисунке 2.8.</p>
 <div class="figure">
-<img src="static/pic233.PNG" alt="Рисунок 2.X - Блок-схема алгоритма вычисления суммы элементов" /><p class="caption">Рисунок 2.X - Блок-схема алгоритма вычисления суммы элементов</p>
+<img src="static/pic28.PNG" alt="Рисунок 2.8 - Блок-схема алгоритма вычисления суммы элементов" /><p class="caption">Рисунок 2.8 - Блок-схема алгоритма вычисления суммы элементов</p>
 </div>
 <p>Программная реализация на языке Pascal:</p>
-<pre class="sourceCode Pascal" id="ex23P"><code class="sourceCode pascal"><span class="kw">var</span> a,s: <span class="dt">integer</span>;
+<pre class="sourceCode Pascal" id="ex23P"><code class="sourceCode pascal"><span class="kw">var</span> a, s: <span class="dt">integer</span>;
 <span class="kw">begin</span>
-  s:=<span class="dv">0</span>;
+  s := <span class="dv">0</span>;
   <span class="kw">repeat</span>
     <span class="kw">read</span>(a);
-    s:=s+a;
-  <span class="kw">until</span> a=<span class="dv">0</span>;
-  writeln(<span class="st">&#39;Summa of elements &#39;</span>,s);
+    s := s + a;
+  <span class="kw">until</span> a = <span class="dv">0</span>;
+  writeln(<span class="st">&#39;Summa of elements &#39;</span>, s);
   readln;
 <span class="kw">end</span>.</code></pre>
 <p>На языке программирования C:</p>
 <pre class="sourceCode C" id="ex23С"><code class="sourceCode c"><span class="ot">#include &lt;stdio.h&gt;</span>
 <span class="dt">int</span> main() {
-    <span class="dt">int</span> a, s=<span class="dv">0</span>;
+    <span class="dt">int</span> a, s = <span class="dv">0</span>;
     <span class="kw">do</span> {
-        scanf(<span class="st">&quot;%d&quot;</span>,&amp;a);
-        s=s+a;}
-    <span class="kw">while</span>  (a!=<span class="dv">0</span>) ; 
-    printf(<span class="st">&quot;Summa of elements %d&quot;</span>,s);
+        scanf(<span class="st">&quot;%d&quot;</span>, &amp;a);
+        s = s + a;
+    }
+    <span class="kw">while</span> (a != <span class="dv">0</span>); 
+    printf(<span class="st">&quot;Summa of elements %d&quot;</span>, s);
 }</code></pre>
 <h3 id="part2-4">2.4 Задачи для самостоятельной подготовки</h3>
 <p>Изобразите блок-схемы алгоритмов для решения предлагаемых задач.</p>
@@ -639,5 +641,6 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>Найдите все простые числа в диапазоне от 1 до N. Используйте решето Аткина.</li>
 </ol>
 <h2 id="conclude">Заключение</h2>
+<p>Для разработки программного обеспечения создано множество языков программирования. Решение большинства практических задач часто приводит к созданию очень больших программ со сложной логической структурой, состоящей из сотен, тысяч и даже десятков тысяч операторов. Создание таких программ - труднейший процесс, требующий привлечения всех способностей человека к абстрактному мышлению, поэтому для облегчения восприятия на этапе создания программного обеспечеия необходимо использавть графические формы - схемы алгоритмов. Язык схем повышает структурность разрабатываемой программы, легко усваивается человеком и становится эффективным инструментом общения специалистов на этапе постановки задачи и дальнейшего проектирования.</p>
 </body>
 </html>
